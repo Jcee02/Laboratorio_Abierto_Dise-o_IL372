@@ -1,0 +1,10 @@
+# Wrapping
+printWidth = 80
+proseWrap = "always"
+
+# Formatting
+arrowParens = "always"
+bracketSpacing = true
+semi = false
+singleQuote = false
+trailingComma = "es5"
