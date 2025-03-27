@@ -5,7 +5,7 @@
 Nuestro proyecto consiste en desarrollar un SaaS (Software as a Service) que se
 encargue de procesar los datos extraídos a través de OBDs, dispositivos
 inteligentes que escanean el estado actual del automóvil, y sea capaz de mostrar
-dicha información procesada a través de un sitio web o una aplicación móvil.
+dicha información procesada a través de una aplicación.
 
 ## Objetivo General
 
@@ -24,7 +24,7 @@ trabaje dichos datos para facilitar su comprensión y uso.
 Para mecánicos y personas curiosas interesadas en diagnosticar el estado actual
 de un automóvil y conocer más acerca del coche.
 
-## Beneficios Esperados}
+## Beneficios Esperados
 
 - Un análisis del automóvil confiable y seguro
 - Mejor visualización y comprensión de los datos
