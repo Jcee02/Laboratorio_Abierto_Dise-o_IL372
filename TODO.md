@@ -27,7 +27,7 @@
 
 ## Modelado del Sistema
 
-- [ ] Diagrama de clases
+- [x] Diagrama de clases
 - [ ] Diagrama de caso de uso
 - [ ] Diagrama de secuencia
   - [ ] Cuenta gratis
@@ -56,10 +56,18 @@
   - [ ] Suspender cuenta
   - [ ] Eliminar cuenta
 - [ ] Función conexión OBD
+  - [ ] Conexión
+  - [ ] Desconexión
 - [ ] Funciones códigos OBD
+  - [ ] Escaneo del auto
   - [ ] Extracción de códigos
   - [x] Validación de códigos
-  - [x] Muestreo de códigos error con descripción
+  - [ ] Muestreo de códigos error con descripción
+  - [ ] Visualización del último registro
+  - [ ] Funciones Premium
+    - [ ] Escaneo avanzado del auto
+    - [ ] Acceso a documentación del auto
+    - [ ] Visualización de registros
 
 ## Pruebas y Depuración
 
