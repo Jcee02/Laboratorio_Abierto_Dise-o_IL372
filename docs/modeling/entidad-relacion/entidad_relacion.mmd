@@ -1,0 +1,60 @@
+---
+title: Entity Relationship Diagram OBD
+---
+erDiagram
+
+  User {
+    INT ID PK
+    String(50) name
+    String(50) surname
+    String(50) lastname
+    String(128) email
+    String(255) passwd UK "Must contain at least 8
+                          chars, a number, a
+                          symbol, one uppercase
+                          and one lowercase letter"
+    bool active
+    INT premium_ID FK
+  }
+
+  Premium {
+    INT ID PK
+    bool premium
+    Date suscriptions[]
+    Date due
+  }
+
+  Log {
+    INT ID PK
+    INT user_ID FK
+    INT car_ID FK
+    INT[] codes_ID FK
+  }
+
+  Car {
+    INT ID PK
+    String model
+    String year
+    String documentation
+  }
+
+  ObdCode {
+    INT ID PK
+    String category
+    String code
+    String description
+    String[] fixes
+  }
+
+  %% Usuario
+  User ||--o{ Car : "Scan"
+  User ||--o| Log : "Can save"
+
+  %% Premium
+  Premium ||--|| User : "Is a"
+  Premium ||--o{ Log : "Can save"
+  Premium ||--o{ Car : "Full scan"
+  Premium ||--o{ Documentation : "Can access"
+
+  %% Logs
+  Log ||--|{ ObdCode : "Can save"
