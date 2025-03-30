@@ -45,13 +45,25 @@
   - [ ] Tablas códigos de error
 - [ ] Conexión de BD
 
+### Seguridad
+
+- [ ] Implementación de respaldos periódicos
+- [ ] Hasheo de claves con Argon2
+- [ ] Validación de contraseñas en base a _guidelines_
+  - [ ] Minimo 12 caracteres
+  - [ ] Mínimo una mayúscula, una minúscula y un símbolo
+  - [ ] Validación de claves vulneradas (e.g. Have I Been Pwned API)
+  - [ ] Validación de entropía mayor o igual a 80 bits
+- [ ] Control de privilegios de usuario en el SGBD
+
 ## Implementación de Funciones
 
-- [ ] Funciones de cuenta
+- [ ] Funciones de administración de cuenta
   - [ ] Creación de cuenta
   - [ ] Inicio de sesión
-  - [ ] Recuperación de cuenta
+  - [ ] Recuperación de cuenta mediante correo
   - [ ] Cambio de contraseña
+  - [ ] Autenticación de 2 pasos (e.g., correo o TOTP)
   - [ ] Cerrar sesión
   - [ ] Suspender cuenta
   - [ ] Eliminar cuenta
@@ -64,18 +76,26 @@
   - [x] Validación de códigos
   - [ ] Muestreo de códigos error con descripción
   - [ ] Visualización del último registro
-  - [ ] Funciones Premium
-    - [ ] Escaneo avanzado del auto
-    - [ ] Acceso a documentación del auto
-    - [ ] Visualización de registros
+- [ ] Funciones Premium
+  - [ ] Escaneo avanzado del auto
+  - [ ] Acceso a documentación del auto
+  - [ ] Visualización de registros
+
+## Seguridad
+
+- [ ] Implementación de RegEx para la validación de los campos
+- [ ] Uso de .env para no exponer credenciales
 
 ## Pruebas y Depuración
 
 - [ ] Pruebas de caja blanca
   - [ ] Validar el correcto funcionamiento de las funciones
   - [ ] Validar protección contra inyecciones SQL
-  - [ ] Validar la confidencialidad, integridad y disponibilidad de los datos y
-        _assets_
+  - [ ] Validar que los campos sean correctamente validados
+  - [ ] Validar que los datos y _assets_ sean manejados apropiadamente para
+        garantizar que se cumpla la triada CIAD
+    - [ ] PII
+    - [ ] SPII
 - [ ] Pruebas de caja negra
 - [ ] Depuración
 
