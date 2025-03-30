@@ -23,6 +23,11 @@
   - [ ] Interfaz de administración de cuenta
   - [ ] Interfaz de conexión OBD
   - [ ] Interfaz de diagnóstico de auto
+  - [ ] Interfaz de muestreo de suscripciones
+  - [ ] Interfaz de pagos
+- [ ] Implementación de responsive design
+- [ ] Implementación de paleta de colores o temas
+- [ ] Implementación de colores agradables al usuario
 - [ ] Conexión de interfaces con funciones (frontend con backend)
 
 ## Modelado del Sistema
@@ -93,6 +98,12 @@
 - [ ] Visualización de registros
 - [ ] Eliminación de anuncios en plan pro
 - [ ] Uso offline (BD local para los códigos de error)
+
+### Funciones de Pago
+
+<!-- NOTE: https://www.youtube.com/watch?v=olfaBgJrUBI -->
+
+- [ ] Uso de un PSP (_Payment Service Provider_)
 
 ## Seguridad
 
