@@ -58,28 +58,41 @@
 
 ## Implementación de Funciones
 
-- [ ] Funciones de administración de cuenta
-  - [ ] Creación de cuenta
-  - [ ] Inicio de sesión
-  - [ ] Recuperación de cuenta mediante correo
-  - [ ] Cambio de contraseña
-  - [ ] Autenticación de 2 pasos (e.g., correo o TOTP)
-  - [ ] Cerrar sesión
-  - [ ] Suspender cuenta
-  - [ ] Eliminar cuenta
-- [ ] Función conexión OBD
-  - [ ] Conexión
-  - [ ] Desconexión
-- [ ] Funciones códigos OBD
-  - [ ] Escaneo del auto
-  - [ ] Extracción de códigos
-  - [x] Validación de códigos
-  - [ ] Muestreo de códigos error con descripción
-  - [ ] Visualización del último registro
-- [ ] Funciones Premium
-  - [ ] Escaneo avanzado del auto
-  - [ ] Acceso a documentación del auto
-  - [ ] Visualización de registros
+### Funciones de Administración de Cuenta
+
+- [ ] Creación de cuenta
+- [ ] Inicio de sesión
+- [ ] Recuperación de cuenta mediante correo
+- [ ] Cambio de contraseña
+- [ ] Autenticación de 2 pasos (e.g., correo o TOTP)
+- [ ] Cerrar sesión
+- [ ] Suspender cuenta
+- [ ] Eliminar cuenta
+
+### Funciones Conexión OBD
+
+- [ ] Conexión
+- [ ] Desconexión
+
+### Funciones Códigos OBD
+
+- [ ] Extracción de códigos
+- [x] Validación de códigos
+
+### Funciones Plan Gratuito
+
+- [ ] Escaneo del auto
+- [ ] Visualización de códigos error con descripción
+- [ ] Visualización del último registro
+- [ ] Adición de publicidad
+
+### Funciones Plan Premium
+
+- [ ] Escaneo avanzado del auto
+- [ ] Acceso a documentación del auto
+- [ ] Visualización de registros
+- [ ] Eliminación de anuncios en plan pro
+- [ ] Uso offline (BD local para los códigos de error)
 
 ## Seguridad
 
@@ -93,7 +106,7 @@
   - [ ] Validar protección contra inyecciones SQL
   - [ ] Validar que los campos sean correctamente validados
   - [ ] Validar que los datos y _assets_ sean manejados apropiadamente para
-        garantizar que se cumpla la triada CIAD
+        garantizar que se cumpla la triada CID
     - [ ] PII
     - [ ] SPII
 - [ ] Pruebas de caja negra
