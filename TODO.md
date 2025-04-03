@@ -8,11 +8,11 @@
   - [x] Requisitos funcionales
   - [x] Requisitos no funcionales
 - [x] Selección de metodología
-- [ ] Selección de arquitectura
-  - [ ] Diseño de arquitectura
+- [x] Selección de arquitectura
+  - [x] Diseño de arquitectura
 - [x] Selección de tecnologías
   - [x] Selección de lenguajes de programación
-  - [ ] Selección de sistema gestor de BD
+  - [x] Selección de sistema gestor de BD
   - [ ] Selección de frameworks
 
 ## Interfaz de Usuario
