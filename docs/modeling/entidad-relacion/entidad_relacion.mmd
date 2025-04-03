@@ -9,10 +9,7 @@ erDiagram
     String(50) surname
     String(50) lastname
     String(128) email
-    String(255) passwd UK "Must contain at least 8
-                          chars, a number, a
-                          symbol, one uppercase
-                          and one lowercase letter"
+    String(255) passwd UK "Must follow passwd guidelines"
     bool active
     INT premium_ID FK
   }

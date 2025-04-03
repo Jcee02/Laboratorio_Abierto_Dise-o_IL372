@@ -3,6 +3,7 @@ title: Class Diagram OBD
 ---
 classDiagram
   %% Relationtships
+  User <|-- Free
   User <|-- Premium
 
   namespace Users {
@@ -28,15 +29,18 @@ classDiagram
 
       %% Functionalities
       + pair_obd()
+    }
+
+    class Free {
       + scan_auto()
       + view_last_log()
     }
 
     class Premium {
+      %% NOTE: We could implement IA
       + advanced_scan_auto()
       + get_car_docs()
       + view_logs()
-      %% NOTE: We could implement IA
       + fix_docs()
     }
   }
