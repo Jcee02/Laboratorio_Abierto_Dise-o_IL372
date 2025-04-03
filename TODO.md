@@ -33,7 +33,7 @@
 ## Modelado del Sistema
 
 - [x] Diagrama de clases
-- [ ] Diagrama de caso de uso
+- [x] Diagrama de caso de uso
 - [ ] Diagrama de secuencia
   - [ ] Cuenta gratis
   - [ ] Cuenta premium
@@ -41,7 +41,7 @@
 
 ## Base de Datos
 
-- [ ] Diagrama entidad-relación
+- [x] Diagrama entidad-relación
 - [ ] Desarrollo de tablas
   - [ ] Tablas de usuario
   - [ ] Tablas de códigos de error
