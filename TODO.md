@@ -23,6 +23,11 @@
   - [ ] Interfaz de administración de cuenta
   - [ ] Interfaz de conexión OBD
   - [ ] Interfaz de diagnóstico de auto
+  - [ ] Interfaz de muestreo de suscripciones
+  - [ ] Interfaz de pagos
+- [ ] Implementación de responsive design
+- [ ] Implementación de paleta de colores o temas
+- [ ] Implementación de colores agradables al usuario
 - [ ] Conexión de interfaces con funciones (frontend con backend)
 
 ## Modelado del Sistema
@@ -45,37 +50,76 @@
   - [ ] Tablas códigos de error
 - [ ] Conexión de BD
 
+### Seguridad
+
+- [ ] Implementación de respaldos periódicos
+- [ ] Hasheo de claves con Argon2
+- [ ] Validación de contraseñas en base a _guidelines_
+  - [ ] Minimo 12 caracteres
+  - [ ] Mínimo una mayúscula, una minúscula y un símbolo
+  - [ ] Validación de claves vulneradas (e.g. Have I Been Pwned API)
+  - [ ] Validación de entropía mayor o igual a 80 bits
+- [ ] Control de privilegios de usuario en el SGBD
+
 ## Implementación de Funciones
 
-- [ ] Funciones de cuenta
-  - [ ] Creación de cuenta
-  - [ ] Inicio de sesión
-  - [ ] Recuperación de cuenta
-  - [ ] Cambio de contraseña
-  - [ ] Cerrar sesión
-  - [ ] Suspender cuenta
-  - [ ] Eliminar cuenta
-- [ ] Función conexión OBD
-  - [ ] Conexión
-  - [ ] Desconexión
-- [ ] Funciones códigos OBD
-  - [ ] Escaneo del auto
-  - [ ] Extracción de códigos
-  - [x] Validación de códigos
-  - [ ] Muestreo de códigos error con descripción
-  - [ ] Visualización del último registro
-  - [ ] Funciones Premium
-    - [ ] Escaneo avanzado del auto
-    - [ ] Acceso a documentación del auto
-    - [ ] Visualización de registros
+### Funciones de Administración de Cuenta
+
+- [ ] Creación de cuenta
+- [ ] Inicio de sesión
+- [ ] Recuperación de cuenta mediante correo
+- [ ] Cambio de contraseña
+- [ ] Autenticación de 2 pasos (e.g., correo o TOTP)
+- [ ] Cerrar sesión
+- [ ] Suspender cuenta
+- [ ] Eliminar cuenta
+
+### Funciones Conexión OBD
+
+- [ ] Conexión
+- [ ] Desconexión
+
+### Funciones Códigos OBD
+
+- [ ] Extracción de códigos
+- [x] Validación de códigos
+
+### Funciones Plan Gratuito
+
+- [ ] Escaneo del auto
+- [ ] Visualización de códigos error con descripción
+- [ ] Visualización del último registro
+- [ ] Adición de publicidad
+
+### Funciones Plan Premium
+
+- [ ] Escaneo avanzado del auto
+- [ ] Acceso a documentación del auto
+- [ ] Visualización de registros
+- [ ] Eliminación de anuncios en plan pro
+- [ ] Uso offline (BD local para los códigos de error)
+
+### Funciones de Pago
+
+<!-- NOTE: https://www.youtube.com/watch?v=olfaBgJrUBI -->
+
+- [ ] Uso de un PSP (_Payment Service Provider_)
+
+## Seguridad
+
+- [ ] Implementación de RegEx para la validación de los campos
+- [ ] Uso de .env para no exponer credenciales
 
 ## Pruebas y Depuración
 
 - [ ] Pruebas de caja blanca
   - [ ] Validar el correcto funcionamiento de las funciones
   - [ ] Validar protección contra inyecciones SQL
-  - [ ] Validar la confidencialidad, integridad y disponibilidad de los datos y
-        _assets_
+  - [ ] Validar que los campos sean correctamente validados
+  - [ ] Validar que los datos y _assets_ sean manejados apropiadamente para
+        garantizar que se cumpla la triada CID
+    - [ ] PII
+    - [ ] SPII
 - [ ] Pruebas de caja negra
 - [ ] Depuración
 
