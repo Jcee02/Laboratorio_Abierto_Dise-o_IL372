@@ -42,3 +42,54 @@ impl Code {
         self.suffix = None;
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_codigo_valido_con_prefijo_largo() {
+        let code = Code::new("P2BA8".to_string());
+        assert_eq!(code.group.as_deref(), Some("P2B"));
+        assert_eq!(code.suffix.as_deref(), Some("A8"));
+    }
+
+    #[test]
+    fn test_codigo_valido_con_prefijo_corto() {
+        let code = Code::new("C1234".to_string());
+        assert_eq!(code.group.as_deref(), Some("C"));
+        assert_eq!(code.suffix.as_deref(), Some("1234"));
+    }
+
+    #[test]
+    fn test_codigo_con_prefijo_desconocido() {
+        let code = Code::new("Z1234".to_string());
+        assert!(code.group.is_none());
+        assert!(code.suffix.is_none());
+    }
+
+    #[test]
+    fn test_codigo_con_longitud_incorrecta() {
+        let code = Code::new("P123".to_string());
+        assert!(code.group.is_none());
+        assert!(code.suffix.is_none());
+
+        let code = Code::new("P12345".to_string());
+        assert!(code.group.is_none());
+        assert!(code.suffix.is_none());
+    }
+
+    #[test]
+    fn test_codigo_minusculas_no_valido() {
+        let code = Code::new("p2ba8".to_string());
+        assert!(code.group.is_none());
+        assert!(code.suffix.is_none());
+    }
+
+    #[test]
+    fn test_codigo_vacio() {
+        let code = Code::new("".to_string());
+        assert!(code.group.is_none());
+        assert!(code.suffix.is_none());
+    }
+}
