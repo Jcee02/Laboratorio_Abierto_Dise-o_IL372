@@ -1,0 +1,28 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Instalar dependencias necesarias
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev pkg-config
+
+      - name: Ejecutar pruebas
+        run: cargo test --all
+
+      - name: Ejecutar pruebas con cobertura
+        uses: actions-rs/tarpaulin@v0.1
+        with:
+          version: latest
