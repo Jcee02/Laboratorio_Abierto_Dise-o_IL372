@@ -21,8 +21,3 @@ jobs:
 
       - name: Ejecutar pruebas
         run: cargo test --all
-
-      - name: Ejecutar pruebas con cobertura
-        uses: actions-rs/tarpaulin@v0.1
-        with:
-          version: latest
