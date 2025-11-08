@@ -1,65 +1,63 @@
 ---
-title: Class Diagram OBD
+title: Class Diagram for OBD Platform
 ---
 classDiagram
   %% Relationtships
-  User <|-- Free
-  User <|-- Premium
+  User --> OBD_Connection : uses
+  OBD_Connection --> Car: gets
+  Car --> Logs: A scan generates
+  Logs ..> OBD_Code: contains
 
-  namespace Users {
+  class User {
+    - INT user_ID
+    - String name
+    - String last_name
+    - String email
+    - String passwd
 
-    class New_User {
-      create_account()
-    }
-
-    class User {
-      - String name
-      - String surname
-      - String last_name
-      - String email
-      - String passwd
-
-      %% Account Managment
-      + log_in()
-      + sign_out()
-      + change_passwd()
-      + recover_passwd()
-      + delete_account()
-      + suspend_account()
-
-      %% Functionalities
-      + pair_obd()
-    }
-
-    class Free {
-      + scan_auto()
-      + view_last_log()
-    }
-
-    class Premium {
-      %% NOTE: We could implement IA
-      + advanced_scan_auto()
-      + get_car_docs()
-      + view_logs()
-      + fix_docs()
-    }
+    + log_in(email, passwd)
+    + sign_out(user_ID)
+    + change_passwd(old, new)
+    + reset_passwd(email)
+    + delete_account()
+    + suspend_account()
   }
 
-  namespace Obd {
-    class Code {
-      - String code
-      - String group
-      - String suffix
+  class Car {
+    - INT car_ID
+    - String VIN
+    - String brand
+    - String model
+    - String year
 
-      + get_code()
-      %% TODO: Rename set_group_and_code() for validate_code()
-      - validate_code()
-      + get_code_description()
-    }
+    + scan()
+    + show_logs()
+    + perform_analytics()
+    + show_analytics()
+  }
 
-    class Connection {
-      + connect()
-      + disconnect()
-    }
-}
+  class Logs {
+    - Enum status
+    - INT occurrence_count
+    - Time created_at
+    - Time updated_at
+  }
 
+  class OBD_Code {
+    - String code
+    - String category
+    - String suffix
+
+    + get_code()
+    - validate_code()
+    + get_description()
+  }
+
+  class OBD_Connection {
+    - String protocol
+    - String device_ID
+    - Boolean connected
+
+    + connect() bool
+    + disconnect() bool
+  }
