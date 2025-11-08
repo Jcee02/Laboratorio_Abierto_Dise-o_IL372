@@ -1,57 +1,75 @@
 ---
-title: Entity Relationship Diagram OBD
+title: ER Diagram for OBD Platform
 ---
 erDiagram
-
-  User {
+  USERS {
     INT ID PK
-    String(50) name
-    String(50) surname
-    String(50) lastname
-    String(128) email
-    String(255) passwd UK "Must follow passwd guidelines"
-    bool active
-    INT premium_ID FK
+    VARCHAR(50) first_name
+    VARCHAR(50) last_name
+    VARCHAR(128) email UK
+    VARCHAR(255) password_hash UK
+    BOOLEAN active
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
   }
 
-  Premium {
+  CARS {
     INT ID PK
-    bool premium
-    Date suscriptions[]
-    Date due
+    VARCHAR(17) VIN UK "Vehicle Identificacion Number"
+    VARCHAR(50) brand
+    VARCHAR(50) model
+    VARCHAR(4) year
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
   }
 
-  Log {
-    INT ID PK
+  USER_CAR {
     INT user_ID FK
     INT car_ID FK
-    INT[] codes_ID FK
+    ENUM role "owner|mechanic"
+    TIMESTAMP granted_at
+    TIMESTAMP expires_at
   }
 
-  Car {
+  CAR_SPECS {
+    INT car_ID PK
+    INT engine_cc
+    VARCHAR(20) fuel_type
+    VARCHAR(30) transmission
+    VARCHAR(30) body_style
+    JSONB json_snapshot
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+
+  LOGS {
     INT ID PK
-    String model
-    String year
-    String documentation
+    INT car_ID FK
+    TIMESTAMP scanned_at
+    TIMESTAMP created_at
   }
 
-  ObdCode {
+  OBD_CODES {
     INT ID PK
-    String category
-    String code
-    String description
-    String[] fixes
+    VARCHAR(10) category
+    VARCHAR(10) code UK
+    TEXT description
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
   }
 
-  %% Usuario
-  User ||--o{ Car : "Scan"
-  User ||--o| Log : "Can save"
+  LOG_OBD_CODE {
+    INT log_ID FK
+    INT code_ID FK
+    ENUM status "active|cleared"
+    INT occurrence_count
+    TIMESTAMP created_at
+  }
 
-  %% Premium
-  Premium ||--|| User : "Is a"
-  Premium ||--o{ Log : "Can save"
-  Premium ||--o{ Car : "Full scan"
-  Premium ||--o{ Documentation : "Can access"
-
-  %% Logs
-  Log ||--|{ ObdCode : "Can save"
+  %% Relationships
+  USERS ||--o{ USER_CAR : owns
+  CARS ||--o{ USER_CAR : linked_to
+  CARS ||--o{ LOGS : generates
+  CARS ||--|| CAR_SPECS : has
+  LOGS ||--o{ LOG_OBD_CODE : includes
+  OBD_CODES ||--o{ LOG_OBD_CODE : referenced_by
