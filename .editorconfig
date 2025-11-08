@@ -15,7 +15,7 @@ indent_style = space
 indent_size = 4
 
 # 2 space indentation
-[*.{css,env,htm,html,md,sql,ts,tsx,yaml,yml}]
+[*.{css,env,htm,html,js,jsx,json,jsonc,lua,md,mdx,sass,scss,sql,ts,tsx,toml,xml,yaml,yml}]
 indent_style = space
 indent_size = 2
 
